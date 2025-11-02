@@ -72,7 +72,7 @@ export default function Portfolio() {
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#work" className="hover:text-emerald-300 transition">Work</a>
-            <a href="#skills" className="hover:text-emerald-300 transition">Skills</a>
+            {/* <a href="#skills" className="hover:text-emerald-300 transition">Skills</a> */}
             <a href="#about" className="hover:text-emerald-300 transition">About</a>
             <a href="#contact" className="hover:text-emerald-300 transition">Contact</a>
           </nav>
@@ -332,20 +332,20 @@ function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; va
   );
 }
 
-function SkillCard({ title, items }: { title: string; items: string[] }) {
-  return (
-    <Card className="bg-white/5 border-white/10">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription className="text-slate-300/80">What I use in production</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-2 list-disc list-inside text-slate-200">
-          {items.map((i) => (
-            <li key={i}>{i}</li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
-  );
-}
+// function SkillCard({ title, items }: { title: string; items: string[] }) {
+//   return (
+//     <Card className="bg-white/5 border-white/10">
+//       <CardHeader>
+//         <CardTitle>{title}</CardTitle>
+//         <CardDescription className="text-slate-300/80">What I use in production</CardDescription>
+//       </CardHeader>
+//       <CardContent>
+//         <ul className="space-y-2 list-disc list-inside text-slate-200">
+//           {items.map((i) => (
+//             <li key={i}>{i}</li>
+//           ))}
+//         </ul>
+//       </CardContent>
+//     </Card>
+//   );
+// }
