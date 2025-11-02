@@ -25,7 +25,7 @@ export default function Portfolio() {
       tags: ["Tabular ML", "Class Imbalance", "Explainability", "Streamlit/FastAPI"],
       status: "Coming soon",
       link: "#",
-      img: "/Airlines.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/images/Airlines.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p2",
@@ -35,7 +35,7 @@ export default function Portfolio() {
       tags: ["Transformers", "Text Classification", "FastAPI", "MLOps"],
       status: "Coming soon",
       link: "#",
-      img: "/NLP.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/images/NLP.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p3",
@@ -45,7 +45,7 @@ export default function Portfolio() {
       tags: ["Recommenders", "Vectorization", "Eval@K", "Streamlit"],
       status: "Coming soon",
       link: "#",
-      img: "/Learning.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/images/Learning.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p4",
@@ -55,7 +55,7 @@ export default function Portfolio() {
       tags: ["SymPy", "NumPy", "Simulation", "CLI/Web UI"],
       status: "Coming soon",
       link: "#",
-      img: "/Math.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/images/Math.png?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
@@ -140,26 +140,24 @@ export default function Portfolio() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-3xl blur"></div>
               <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-6">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3">
                   <Stat icon={<Brain className="h-4 w-8"/>} label="ML/AI" value="Generative AI, Scikit-learn,
 Pandas, NumPy, Data-driven, XGBoost, Kaggle,
-Optimization, Vector Search, Recommendation Systems" />
+Optimization, Vector Search" />
                   <Stat icon={<Cloud className="h-4 w-8"/>} label="Cloud" value="AWS (S3, EC2, Lambda, RDS, Bedrock), Azure
-DevOps, CloudFormation, SQL Databases, Linux Integrations,
+DevOps, CloudFormation, Linux Integrations,
 Cloud Security" />
                 </div>
-                 <div className="grid grid-cols-2 gap-3 pt-5">
+                 <div className="grid grid-cols-1 gap-3 pt-5">
                   <Stat icon={<BrickWall className="h-4 w-8"/>} label="DevOps/MLOps" value="AWS Bedrock, Docker, Kubernetes, GitHub Actions,
-CI/CD, Release Pipelines, Datadog, ELK Stack, Webpack
-Build Systems" />
-                  <Stat icon={<Boxes className="h-4 w-8"/>} label="Project Methodologies" value="Agile-Scrum, JIRA, ServiceNow,
-SourceTree, Technical Mentorship, Release Management,
+CI/CD, Release Pipelines, Datadog, ELK Stack, Webpack" />
+                  <Stat icon={<Boxes className="h-4 w-8"/>} label="Project Methodologies" value="Agile-Scrum, JIRA, Monday.COM, Azure, Release Management, ServiceNow,
 Performance Optimization" />
                 </div>
-                <div className="grid grid-cols-2 gap-3 pt-5">
+                <div className="grid grid-cols-1 gap-3 pt-5">
                   <Stat icon={<Backpack className="h-4 w-8"/>} label="Backend" value="Python, C# .NET, Node.js, .NET Core,
-Express.js, REST APIs, SQL Server,
-PostgreSQL, Stored Procedures, Micro-services,
+ REST APIs, SQL Server,
+PostgreSQL, Micro-services,
 Data Pipelines" />
                   <Stat icon={<BsFront className="h-4 w-8"/>} label="Frontend" value=" React, Angular, Vue.js, Vite, React Native,
 TypeScript, JavaScript (ES6+), Ember.js, Bootstrap,
@@ -235,7 +233,7 @@ TailwindCSS" />
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-3xl blur"></div>
               <img
-                src="/Senior.jpeg?q=80&w=1200&auto=format&fit=crop"
+                src="/images/Senior.jpeg?q=80&w=1200&auto=format&fit=crop"
                 alt="Workstation"
                 className="relative rounded-3xl border border-white/10"
               />
