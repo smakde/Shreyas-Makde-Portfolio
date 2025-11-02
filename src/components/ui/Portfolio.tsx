@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileDown, ExternalLink, Brain, Cloud, Boxes, Sparkles } from "lucide-react";
+import { Github, Mail, FileDown, ExternalLink, Brain, Cloud, Boxes, Sparkles, BrickWall, Backpack } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
 import { Button } from "./button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
 import { Badge } from "./badge";
+import { BsFront } from "react-icons/bs";
 
 // ===
 // Portfolio Template — single-file React component
@@ -17,43 +19,43 @@ export default function Portfolio() {
   const projects = [
     {
       id: "p1",
-      title: "Realtime Recommendations @ Cloud Scale",
+      title: "Airline Passenger Satisfaction",
       blurb:
-        "Event-driven ranking service with streaming features, feature store, and low-latency inference.",
-      tags: ["ML Engineering", "Streaming", "Feature Store", "Kubernetes"],
+        "Model dissatisfaction as “at-risk” customers; build end-to-end pipeline (EDA → features → LightGBM/XGBoost → AUC/PR) with SHAP, counterfactuals, and a mini dashboard of “preventive actions” by segment.",
+      tags: ["Tabular ML", "Class Imbalance", "Explainability", "Streamlit/FastAPI"],
       status: "Coming soon",
       link: "#",
-      img: "https://images.unsplash.com/photo-1534759846116-57968a6b0a5b?q=80&w=1200&auto=format&fit=crop",
+      img: "/src/assets/Airlines.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p2",
-      title: "Fraud Detection on Imbalanced Data",
+      title: "NLP Ticket Triage & Sentiment",
       blurb:
-        "End-to-end pipeline: data ingestion, training, thresholding, cost-aware metrics, and monitoring.",
-      tags: ["Imbalanced Learning", "MLOps", "Monitoring"],
+        "Compact transformer to auto-label help-desk tickets (sentiment + topic), with FastAPI endpoint and eval dashboard.",
+      tags: ["Transformers", "Text Classification", "FastAPI", "MLOps"],
       status: "Coming soon",
       link: "#",
-      img: "https://images.unsplash.com/photo-1551808525-51a94da548ce?q=80&w=1200&auto=format&fit=crop",
+      img: "/src/assets/NLP.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p3",
-      title: "Domain LLM: RAG + Fine-tuning",
+      title: "Learning-Resource Recommender",
       blurb:
-        "Retrieval-augmented generation with evaluation harness, cost/latency budgets, and guardrails.",
-      tags: ["LLM", "RAG", "Evaluation", "Guardrails"],
+        "Hybrid implicit-feedback + content (ALS/LightFM) with a tiny Streamlit app to browse top-N recs and explanations.",
+      tags: ["Recommenders", "Vectorization", "Eval@K", "Streamlit"],
       status: "Coming soon",
       link: "#",
-      img: "https://images.unsplash.com/photo-1551281044-8c5f0a9a1f0a?q=80&w=1200&auto=format&fit=crop",
+      img: "/src/assets/Learning.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p4",
       title: "Edge Vision: On-device CV Pipeline",
       blurb:
-        "Quantized models deployed to edge; telemetry, drift alerts, and OTA updates.",
-      tags: ["Computer Vision", "Edge", "Quantization"],
+        "SymPy + NumPy engine that solves probability/combinatorics/calculus snippets, shows steps, and verifies via Monte Carlo.",
+      tags: ["SymPy", "NumPy", "Simulation", "CLI/Web UI"],
       status: "Coming soon",
       link: "#",
-      img: "https://images.unsplash.com/photo-1544198365-3c4b96885f2a?q=80&w=1200&auto=format&fit=crop",
+      img: "/src/assets/Math.png?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
@@ -76,7 +78,7 @@ export default function Portfolio() {
           </nav>
           <div className="flex items-center gap-2">
             <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-              <a href="#contact"><Mail className="mr-2 h-4 w-4"/>Get in touch</a>
+              <a href="mailto:shreyas.makde.dev@gmail.com"><Mail className="mr-2 h-4 w-4"/>Get in touch</a>
             </Button>
           </div>
         </div>
@@ -86,11 +88,19 @@ export default function Portfolio() {
       <section className="w-full px-6 pt-16 pb-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Badge className="mb-4 bg-emerald-500/20 text-emerald-300 border-emerald-400/30">Open to Staff/Senior ML & Platform</Badge>
+            {/* Profile avatar - using provided GitHub avatar URL */}
+            <div className="mb-6">
+              <Avatar
+                src="https://avatars.githubusercontent.com/u/209976736?v=4"
+                alt="Shreyas Makde"
+                className="h-36 w-36 md:h-44 md:w-44 lg:h-52 lg:w-52 rounded-full border-2 border-white/10 object-cover shadow-lg"
+                initials="SM"
+              />
+            </div>
+            <Badge className="mb-4 bg-emerald-500/20 text-emerald-300 border-emerald-400/30">Shreyas Bhupesh Makde: Sr. Software Engineer : AI/ML</Badge>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-              Engineering data into <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-300">production-ready intelligence</span>
-              <br />
-              <span className="text-slate-300 text-2xl md:text-3xl">— combining software craftsmanship with machine learning.</span>
+              I engineer and envision data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-300">production-ready intelligence.</span>
+              <div className="text-slate-200 text-2xl md:text-3xl pt-5">Combining software craftsmanship with machine learning.</div>
             </h1>
 
             <p className="mt-6 text-slate-300/90 max-w-xl">
@@ -100,24 +110,28 @@ export default function Portfolio() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button className="bg-emerald-500 hover:bg-emerald-400" asChild>
-                <a href="#work"><Brain className="mr-2 h-4 w-4"/>See my work</a>
+                <a href="https://github.com/smakde"><Brain className="mr-2 h-4 w-4"/>See my work</a>
               </Button>
-              <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
+              {/* <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
                 <a href="#skills"><Boxes className="mr-2 h-4 w-4"/>Skills</a>
-              </Button>
+              </Button> */}
               <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
                 <a href="/Shreyas_Makde_Resume.pdf" download><FileDown className="mr-2 h-4 w-4"/>Resume</a>
               </Button>
             </div>
 
             <div className="mt-6 flex items-center gap-4">
-              <a href="https://github.com/" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="GitHub">
+              <a href="https://github.com/smakde" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="GitHub">
                 <Github className="h-5 w-5"/>
                 <span className="text-sm">GitHub</span>
               </a>
-              <a href="https://www.linkedin.com/" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5"/>
+              <a href="https://www.linkedin.com/in/shrey1" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
+                <SiLinkedin className="h-5 w-5"/>
                 <span className="text-sm">LinkedIn</span>
+              </a>
+              <a href="mailto:shreyas.makde.dev@gmail.com" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
+                <Mail className="h-4 w-4"/>
+                <span className="text-sm">shreyas.makde.dev@gmail.com</span>
               </a>
             </div>
           </motion.div>
@@ -126,13 +140,33 @@ export default function Portfolio() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-3xl blur"></div>
               <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-6">
-                <div className="grid grid-cols-3 gap-3">
-                  <Stat icon={<Brain className="h-5 w-5"/>} label="ML/AI" value="LLMs, CV, Recs" />
-                  <Stat icon={<Cloud className="h-5 w-5"/>} label="Cloud" value="AWS, k8s, CI/CD" />
-                  <Stat icon={<Boxes className="h-5 w-5"/>} label="Data" value="Kafka, SQL, Feature Stores" />
+                <div className="grid grid-cols-2 gap-3">
+                  <Stat icon={<Brain className="h-4 w-8"/>} label="ML/AI" value="Generative AI, Scikit-learn,
+Pandas, NumPy, Data-driven, XGBoost, Kaggle,
+Optimization, Vector Search, Recommendation Systems" />
+                  <Stat icon={<Cloud className="h-4 w-8"/>} label="Cloud" value="AWS (S3, EC2, Lambda, RDS, Bedrock), Azure
+DevOps, CloudFormation, SQL Databases, Linux Integrations,
+Cloud Security" />
+                </div>
+                 <div className="grid grid-cols-2 gap-3 pt-5">
+                  <Stat icon={<BrickWall className="h-4 w-8"/>} label="DevOps/MLOps" value="AWS Bedrock, Docker, Kubernetes, GitHub Actions,
+CI/CD, Release Pipelines, Datadog, ELK Stack, Webpack
+Build Systems" />
+                  <Stat icon={<Boxes className="h-4 w-8"/>} label="Project Methodologies" value="Agile-Scrum, JIRA, ServiceNow,
+SourceTree, Technical Mentorship, Release Management,
+Performance Optimization" />
+                </div>
+                <div className="grid grid-cols-2 gap-3 pt-5">
+                  <Stat icon={<Backpack className="h-4 w-8"/>} label="Backend" value="Python, C# .NET, Node.js, .NET Core,
+Express.js, REST APIs, SQL Server,
+PostgreSQL, Stored Procedures, Micro-services,
+Data Pipelines" />
+                  <Stat icon={<BsFront className="h-4 w-8"/>} label="Frontend" value=" React, Angular, Vue.js, Vite, React Native,
+TypeScript, JavaScript (ES6+), Ember.js, Bootstrap,
+TailwindCSS" />
                 </div>
                 <div className="mt-5 text-xs text-slate-400">
-                  Built with performance and reliability in mind — latency budgets, cost control, and observability baked in.
+                  Built with performance and reliability in mind; latency budgets, cost control, and observability baked in.
                 </div>
               </div>
             </div>
@@ -144,10 +178,9 @@ export default function Portfolio() {
       <section id="work" className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex items-end justify-between mb-6">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Selected Projects</h2>
-            <p className="text-slate-400">Four flagship builds — placeholders now, we’ll fill these in together.</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
           </div>
-          <a href="#contact" className="text-sm text-emerald-300 hover:underline">Want one tailored to your stack?</a>
+          {/* <a href="#contact" className="text-sm text-emerald-300 hover:underline">Want one tailored to your stack?</a> */}
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -173,7 +206,7 @@ export default function Portfolio() {
                 </div>
               </CardContent>
               <CardFooter className="justify-between">
-                <div className="text-xs text-slate-400">Repo, demo, and write-up will appear here.</div>
+                <div className="text-xs text-slate-400">Click on details for GitHub resources for this project</div>
                 <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
                   <a href={p.link} aria-disabled>
                     <ExternalLink className="mr-2 h-4 w-4"/>Details
@@ -185,7 +218,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Skills
       <section id="skills" className="mx-auto max-w-7xl px-6 py-12">
         <h2 className="text-2xl md:text-3xl font-semibold mb-4">Skills Snapshot</h2>
         <div className="grid md:grid-cols-3 gap-6">
@@ -193,7 +226,7 @@ export default function Portfolio() {
           <SkillCard title="Software & Cloud" items={[".NET/C#, Python", "AWS (ECS, Lambda, S3, SQS)", "Docker, Kubernetes", "gRPC/REST", "Kafka, Redis", "CI/CD, IaC"]} />
           <SkillCard title="MLOps & Ops" items={["Model registry", "Observability (OpenTelemetry)", "Data/Concept Drift", "Latency & Cost Budgets", "A/B & Shadow deploys", "Governance"]} />
         </div>
-      </section>
+      </section> */}
 
       {/* About */}
       <section id="about" className="mx-auto max-w-7xl px-6 py-12">
@@ -202,7 +235,7 @@ export default function Portfolio() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-3xl blur"></div>
               <img
-                src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1200&auto=format&fit=crop"
+                src="src/assets/Senior.jpeg?q=80&w=1200&auto=format&fit=crop"
                 alt="Workstation"
                 className="relative rounded-3xl border border-white/10"
               />
@@ -211,21 +244,28 @@ export default function Portfolio() {
           <div className="md:col-span-3">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">About</h2>
             <p className="text-slate-300/90 leading-relaxed">
-              Senior Software Engineer evolving into Staff-level ML/Platform roles. I ship systems end to end: from data
-              ingestion to production inference, with observability and reliability as first-class citizens. I enjoy
-              solving hard engineering problems that tie directly to business outcomes.
+              Recently promoted Senior Software Engineer with 11 yrs in distributed systems, C# .NET, Python, Node.js frameworks and AWS.
+Skilled in troubleshooting, process optimization, and data-driven solutions that improve safety, efficiency, and
+reliability. Experienced in cross-functional collaboration, delivering quality solutions in complex environments.
             </p>
             <ul className="mt-4 space-y-2 text-slate-300/90 list-disc list-inside">
-              <li>10+ years distributed systems, microservices, and event-driven architectures.</li>
-              <li>Production experience with AWS, Kubernetes, Kafka, SQL Server, Redis.</li>
-              <li>Hands-on with LLM apps, recsys, fraud detection, and computer vision.</li>
+              <li>Led cloud modernizations (.NET Core + Vue), cutting API latency ~80% and improving reliability.</li>
+              <li>Built CI/CD with GitHub Actions/Azure Pipelines; reduced build/test times across multiple teams.</li>
+              <li>Designed streaming + batch data pipelines; idempotent consumers, and schema versioning</li>
+              <li>Strong SQL (T-SQL/Postgres): indexing, query tuning, and data modeling for analytics at scale.</li>
+              <li>Observability-first: Datadog/ELK tracing, SLOs, on-call playbooks, and production runbooks.</li>
+              <li>ML-in-prod: SageMaker/Lambda inference, feature stores, vector search, and guardrails.</li>
+              <li>API design at scale: REST/gRPC contracts, pagination, backward compatibility, authz/entitlements.</li>
+              <li>Security & compliance: IAM least privilege, secrets management, PII handling, and audit logging.</li>
+              <li>Cost/perf on AWS: right-sizing, caching (Redis), and storage/network optimizations.</li>
+              <li>Mentored engineers, led TFS→Git migration across 9+ repos and cross-team delivery.</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-6 py-12">
+      {/* <section id="contact" className="mx-auto max-w-7xl px-6 py-12">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-semibold">Let’s build something</h2>
           <p className="mt-2 text-slate-300/90 max-w-2xl">
@@ -243,16 +283,16 @@ export default function Portfolio() {
             </div>
           </form>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="py-10 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-          <div>© {year} Shreyas Makde — All rights reserved.</div>
+          <div>© {year} Shreyas Makde: All rights reserved.</div>
           <div className="flex items-center gap-5">
-            <a href="mailto:shreyas@example.com" className="hover:text-emerald-300 inline-flex items-center gap-1"><Mail className="h-4 w-4"/>shreyas@example.com</a>
-            <a href="https://github.com/" className="hover:text-emerald-300 inline-flex items-center gap-1"><Github className="h-4 w-4"/>GitHub</a>
-            <a href="https://www.linkedin.com/" className="hover:text-emerald-300 inline-flex items-center gap-1"><Linkedin className="h-4 w-4"/>LinkedIn</a>
+            <a href="mailto:shreyas.makde.dev@gmail.com" className="hover:text-emerald-300 inline-flex items-center gap-1"><Mail className="h-4 w-4"/>shreyas.makde.dev@gmail.com</a>
+            <a href="https://github.com/smakde" className="hover:text-emerald-300 inline-flex items-center gap-1"><Github className="h-4 w-4"/>GitHub</a>
+            <a href="https://www.linkedin.com/in/shrey1" className="hover:text-emerald-300 inline-flex items-center gap-1"><SiLinkedin className="h-4 w-4"/>LinkedIn</a>
           </div>
         </div>
       </footer>
@@ -261,6 +301,21 @@ export default function Portfolio() {
 }
 
 // ——— Helpers ———
+function Avatar({ src, alt, className, initials = "SM" }: { src?: string; alt?: string; className?: string; initials?: string }) {
+  const [errored, setErrored] = useState(false);
+
+  // If image missing or fails to load, show initials fallback
+  if (!src || errored) {
+    return (
+      <div role="img" aria-label={alt} className={`inline-flex items-center justify-center bg-emerald-500/10 text-emerald-300 ${className}`}>
+        <span className="text-lg font-semibold">{initials}</span>
+      </div>
+    );
+  }
+
+  return <img src={src} alt={alt} className={className} onError={() => setErrored(true)} />;
+}
+
 function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-white/10 p-4 bg-white/5">

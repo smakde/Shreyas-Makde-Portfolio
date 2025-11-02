@@ -166,6 +166,12 @@ button:focus, button:focus-visible { outline: 4px auto -webkit-focus-ring-color;
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/*Override*/
+.text-card-foreground {
+  color: white;
+  font-size: larger;
+}
+
 /* Base layer in v4: use utilities via classes; 
    if you need global base styles, define them here. */
 @layer base {
