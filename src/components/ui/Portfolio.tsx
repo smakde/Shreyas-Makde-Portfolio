@@ -25,7 +25,7 @@ export default function Portfolio() {
       tags: ["Tabular ML", "Class Imbalance", "Explainability", "Streamlit/FastAPI"],
       status: "Coming soon",
       link: "#",
-      img: "/src/assets/Airlines.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/Airlines.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p2",
@@ -35,7 +35,7 @@ export default function Portfolio() {
       tags: ["Transformers", "Text Classification", "FastAPI", "MLOps"],
       status: "Coming soon",
       link: "#",
-      img: "/src/assets/NLP.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/NLP.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p3",
@@ -45,7 +45,7 @@ export default function Portfolio() {
       tags: ["Recommenders", "Vectorization", "Eval@K", "Streamlit"],
       status: "Coming soon",
       link: "#",
-      img: "/src/assets/Learning.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/Learning.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p4",
@@ -55,7 +55,7 @@ export default function Portfolio() {
       tags: ["SymPy", "NumPy", "Simulation", "CLI/Web UI"],
       status: "Coming soon",
       link: "#",
-      img: "/src/assets/Math.png?q=80&w=1200&auto=format&fit=crop",
+      img: "/Math.png?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
@@ -235,7 +235,7 @@ TailwindCSS" />
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-3xl blur"></div>
               <img
-                src="src/assets/Senior.jpeg?q=80&w=1200&auto=format&fit=crop"
+                src="/Senior.jpeg?q=80&w=1200&auto=format&fit=crop"
                 alt="Workstation"
                 className="relative rounded-3xl border border-white/10"
               />
