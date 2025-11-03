@@ -1,4 +1,4 @@
-# Shreyas Makde — AI/ML Portfolio
+# Shreyas Makde — Dev/AI/ML Portfolio
 
 A modern, single-page portfolio designed for senior software and machine learning engineers. The site showcases projects, technical focus areas, and contact information with a polished, animated presentation.
 
