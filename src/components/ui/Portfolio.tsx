@@ -7,12 +7,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "./badge";
 import { BsFront } from "react-icons/bs";
 
-// ===
-// Portfolio Template — single-file React component
-// Tech: TailwindCSS, shadcn/ui, framer-motion, lucide-react
-// Tagline provided by user. Includes space for 4 projects we'll fill in later.
-// ===
-
 export default function Portfolio() {
   const [year] = useState(new Date().getFullYear());
 
@@ -70,25 +64,28 @@ export default function Portfolio() {
             </div>
             <span className="font-semibold tracking-tight">Shreyas Makde</span>
           </div>
+
+          {/* Internal section links: NO target=_blank */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a target="_blank" href="#work" className="hover:text-emerald-300 transition">Work</a>
-            {/* <a target="_blank" href="#skills" className="hover:text-emerald-300 transition">Skills</a> */}
-            <a target="_blank" href="#about" className="hover:text-emerald-300 transition">About</a>
-            <a target="_blank" href="#contact" className="hover:text-emerald-300 transition">Contact</a>
+            <a href="#home" className="hover:text-emerald-300 transition">Home</a>
+            <a href="#work" className="hover:text-emerald-300 transition">Work Experience</a>
+            <a href="#projects" className="hover:text-emerald-300 transition">Projects</a>
+            <a href="#about" className="hover:text-emerald-300 transition">About</a>
           </nav>
+
           <div className="flex items-center gap-2">
             <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-              <a target="_blank" href="mailto:shreyas.makde.dev@gmail.com"><Mail className="mr-2 h-4 w-4"/>Get in touch</a>
+              <a href="mailto:shreyas.makde.dev@gmail.com"><Mail className="mr-2 h-4 w-4"/>Get in touch</a>
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="w-full px-6 pt-16 pb-10">
+      {/* Home */}
+      <section id="home" className="w-full px-6 pt-16 pb-10 scroll-mt-24">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            {/* Profile avatar - using provided GitHub avatar URL */}
+            {/* Avatar */}
             <div className="mb-6">
               <Avatar
                 src="https://avatars.githubusercontent.com/u/209976736?v=4"
@@ -97,10 +94,17 @@ export default function Portfolio() {
                 initials="SM"
               />
             </div>
-            <Badge className="mb-4 bg-emerald-500/20 text-emerald-300 border-emerald-400/30">Shreyas Bhupesh Makde: Sr. Software Engineer : AI/ML</Badge>
+            <Badge className="mb-4 bg-emerald-500/20 text-emerald-300 border-emerald-400/30">
+              Shreyas Bhupesh Makde: Sr. Software Engineer : AI/ML
+            </Badge>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-              I engineer and envision data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-300">production-ready intelligence.</span>
-              <div className="text-slate-200 text-2xl md:text-3xl pt-5">Combining software craftsmanship with machine learning.</div>
+              I engineer and envision data to{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-300">
+                production-ready intelligence.
+              </span>
+              <div className="text-slate-200 text-2xl md:text-3xl pt-5">
+                Combining software craftsmanship with machine learning.
+              </div>
             </h1>
 
             <p className="mt-6 text-slate-300/90 max-w-xl">
@@ -110,58 +114,49 @@ export default function Portfolio() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-                <a target="_blank" href="https://github.com/smakde"><Brain className="mr-2 h-4 w-4"/>See my work</a>
+                <a href="https://github.com/smakde" target="_blank" rel="noreferrer">
+                  <Brain className="mr-2 h-4 w-4" />See my work
+                </a>
               </Button>
-              {/* <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-                <a target="_blank" href="#skills"><Boxes className="mr-2 h-4 w-4"/>Skills</a>
-              </Button> */}
               <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-                <a target="_blank" href="/Shreyas_Makde_Resume.pdf" download><FileDown className="mr-2 h-4 w-4"/>Resume</a>
+                <a href="/Shreyas_Makde_Resume.pdf" download>
+                  <FileDown className="mr-2 h-4 w-4" />Resume
+                </a>
               </Button>
             </div>
 
             <div className="mt-6 flex items-center gap-4">
-              <a target="_blank" href="https://github.com/smakde" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="GitHub">
-                <Github className="h-5 w-5"/>
+              <a href="https://github.com/smakde" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="GitHub">
+                <Github className="h-5 w-5" />
                 <span className="text-sm">GitHub</span>
               </a>
-              <a target="_blank" href="https://www.linkedin.com/in/shrey1" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
-                <SiLinkedin className="h-5 w-5"/>
+              <a href="https://www.linkedin.com/in/shrey1" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
+                <SiLinkedin className="h-5 w-5" />
                 <span className="text-sm">LinkedIn</span>
               </a>
-              <a target="_blank" href="mailto:shreyas.makde.dev@gmail.com" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="LinkedIn">
-                <Mail className="h-4 w-4"/>
+              <a href="mailto:shreyas.makde.dev@gmail.com" className="inline-flex items-center gap-2 hover:text-emerald-300" aria-label="Email">
+                <Mail className="h-4 w-4" />
                 <span className="text-sm">shreyas.makde.dev@gmail.com</span>
               </a>
             </div>
           </motion.div>
 
+          {/* Stats */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-3xl blur"></div>
               <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-6">
                 <div className="grid grid-cols-1 gap-3">
-                  <Stat icon={<Brain className="h-4 w-8"/>} label="ML/AI" value="Generative AI, Scikit-learn,
-Pandas, NumPy, Data-driven, XGBoost, Kaggle,
-Optimization, Vector Search" />
-                  <Stat icon={<Cloud className="h-4 w-8"/>} label="Cloud" value="AWS (S3, EC2, Lambda, RDS, Bedrock), Azure
-DevOps, CloudFormation, Linux Integrations,
-Cloud Security" />
-                </div>
-                 <div className="grid grid-cols-1 gap-3 pt-5">
-                  <Stat icon={<BrickWall className="h-4 w-8"/>} label="DevOps/MLOps" value="AWS Bedrock, Docker, Kubernetes, GitHub Actions,
-CI/CD, Release Pipelines, Datadog, ELK Stack, Webpack" />
-                  <Stat icon={<Boxes className="h-4 w-8"/>} label="Project Methodologies" value="Agile-Scrum, JIRA, Monday.COM, Azure, Release Management, ServiceNow,
-Performance Optimization" />
+                  <Stat icon={<Brain className="h-4 w-8" />} label="ML/AI" value="Generative AI, Scikit-learn, Pandas, NumPy, XGBoost, Vector Search" />
+                  <Stat icon={<Cloud className="h-4 w-8" />} label="Cloud" value="AWS (S3, EC2, Lambda, RDS, Bedrock), Azure DevOps, CloudFormation" />
                 </div>
                 <div className="grid grid-cols-1 gap-3 pt-5">
-                  <Stat icon={<Backpack className="h-4 w-8"/>} label="Backend" value="Python, C# .NET, Node.js, .NET Core,
- REST APIs, SQL Server,
-PostgreSQL, Micro-services,
-Data Pipelines" />
-                  <Stat icon={<BsFront className="h-4 w-8"/>} label="Frontend" value=" React, Angular, Vue.js, Vite, React Native,
-TypeScript, JavaScript (ES6+), Ember.js, Bootstrap,
-TailwindCSS" />
+                  <Stat icon={<BrickWall className="h-4 w-8" />} label="DevOps/MLOps" value="Bedrock, Docker, K8s, GitHub Actions, CI/CD, Datadog, ELK" />
+                  <Stat icon={<Boxes className="h-4 w-8" />} label="Methodologies" value="Agile-Scrum, JIRA, Monday.com, Release Mgmt, ServiceNow" />
+                </div>
+                <div className="grid grid-cols-1 gap-3 pt-5">
+                  <Stat icon={<Backpack className="h-4 w-8" />} label="Backend" value="Python, C# .NET, Node.js, REST, SQL Server, Postgres, Microservices" />
+                  <Stat icon={<BsFront className="h-4 w-8" />} label="Frontend" value="React, Angular, Vue, Vite, TypeScript, TailwindCSS" />
                 </div>
                 <div className="mt-5 text-xs text-slate-400">
                   Built with performance and reliability in mind; latency budgets, cost control, and observability baked in.
@@ -172,42 +167,83 @@ TailwindCSS" />
         </div>
       </section>
 
-      {/* Work / Projects */}
-      <section id="work" className="mx-auto max-w-7xl px-6 py-12">
+      {/* Work Experience */}
+      <section id="work" className="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Work Experience</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <SkillCard
+            title="Sr. Software Engineer"
+            desc="Tyler Technologies (May 2025 - Present)"
+            items={[
+              "Python NLP sentiment (CRM/AppDynamics)",
+              "AWS Lambda & SageMaker workflows",
+              "OpenAI/Bedrock knowledge bases",
+              "Pandas/NumPy performance tuning",
+              "Reusable Python libs & documentation",
+              "CI/CD acceleration across teams",
+            ]}
+          />
+          <SkillCard
+            title="Software Engineer"
+            desc="Tyler Technologies (Jan 2020 - May 2025)"
+            items={[
+              "C# .NET Core APIs",
+              "Vue/TypeScript migration & features",
+              "AWS console (DB ops & deployments)",
+              "Datadog logging & tracing",
+              "Legacy → microservices modernization",
+              "AI-assisted dev workflows & mentoring",
+            ]}
+          />
+          <SkillCard
+            title="Software Engineer"
+            desc="DISA Global Solutions (Jan 2017 - Dec 2019)"
+            items={[
+              "Ember.js modernization (DISAWorks)",
+              "ASP.NET MVC/WebForms",
+              "SQL Server tuning & stored procedures",
+              "REST/JSON & SOAP/XML integrations",
+              "Agile (JIRA), code reviews",
+              "Release pipelines & CI",
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
         <div className="flex items-end justify-between mb-6">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
-          </div>
-          {/* <a target="_blank" href="#contact" className="text-sm text-emerald-300 hover:underline">Want one tailored to your stack?</a> */}
+          <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((p) => (
             <Card key={p.id} className="overflow-hidden bg-white/5 border-white/10 hover:border-emerald-300/30 transition">
               <div className="aspect-video w-full overflow-hidden">
-                <img src={p.img} alt={p.title} className="h-full w-full object-cover object-center"/>
+                <img src={p.img} alt={p.title} className="h-full w-full object-cover object-center" />
               </div>
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>{p.title}</span>
                   <Badge className="bg-green-500/20 text-white-200 border-green-400/30">{p.status}</Badge>
                 </CardTitle>
-                <CardDescription className="text-slate-300/80">
-                  {p.blurb}
-                </CardDescription>
+                <CardDescription className="text-slate-300/80">{p.blurb}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((t) => (
-                    <Badge key={t} variant="secondary" className="bg-white/10 border-white/10 text-slate-200">{t}</Badge>
+                    <Badge key={t} variant="secondary" className="bg-white/10 border-white/10 text-slate-200">
+                      {t}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
               <CardFooter className="justify-between">
                 <div className="text-xs text-slate-400">Click on details for GitHub resources for this project</div>
                 <Button variant="secondary" className="bg-white/10 hover:bg-white/20 border-white/10" asChild>
-                  <a target="_blank" href={p.link} aria-disabled>
-                    <ExternalLink className="mr-2 h-4 w-4"/>Details
+                  <a href={p.link} target="_blank" rel="noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Details
                   </a>
                 </Button>
               </CardFooter>
@@ -216,18 +252,8 @@ TailwindCSS" />
         </div>
       </section>
 
-      {/* Skills
-      <section id="skills" className="mx-auto max-w-7xl px-6 py-12">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Skills Snapshot</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <SkillCard title="ML & Data" items={["LLMs (RAG, finetuning)", "Recsys", "Imbalanced learning", "CV", "Feature Stores", "Experimentation"]} />
-          <SkillCard title="Software & Cloud" items={[".NET/C#, Python", "AWS (ECS, Lambda, S3, SQS)", "Docker, Kubernetes", "gRPC/REST", "Kafka, Redis", "CI/CD, IaC"]} />
-          <SkillCard title="MLOps & Ops" items={["Model registry", "Observability (OpenTelemetry)", "Data/Concept Drift", "Latency & Cost Budgets", "A/B & Shadow deploys", "Governance"]} />
-        </div>
-      </section> */}
-
       {/* About */}
-      <section id="about" className="mx-auto max-w-7xl px-6 py-12">
+      <section id="about" className="mx-auto max-w-7xl px-6 py-12 scroll-mt-24">
         <div className="grid md:grid-cols-5 gap-8 items-start">
           <div className="md:col-span-2">
             <div className="relative">
@@ -243,8 +269,8 @@ TailwindCSS" />
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">About</h2>
             <p className="text-slate-300/90 leading-relaxed">
               Recently promoted Senior Software Engineer with 11 yrs in distributed systems, C# .NET, Python, Node.js frameworks and AWS.
-Skilled in troubleshooting, process optimization, and data-driven solutions that improve safety, efficiency, and
-reliability. Experienced in cross-functional collaboration, delivering quality solutions in complex environments.
+              Skilled in troubleshooting, process optimization, and data-driven solutions that improve safety, efficiency, and reliability.
+              Experienced in cross-functional collaboration, delivering quality solutions in complex environments.
             </p>
             <ul className="mt-4 space-y-2 text-slate-300/90 list-disc list-inside">
               <li>Led cloud modernizations (.NET Core + Vue), cutting API latency ~80% and improving reliability.</li>
@@ -262,35 +288,20 @@ reliability. Experienced in cross-functional collaboration, delivering quality s
         </div>
       </section>
 
-      {/* Contact */}
-      {/* <section id="contact" className="mx-auto max-w-7xl px-6 py-12">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-semibold">Let’s build something</h2>
-          <p className="mt-2 text-slate-300/90 max-w-2xl">
-            Interested in my work or want to collaborate? Drop a note and I’ll get back soon. You can also reach me on
-            LinkedIn.
-          </p>
-
-          <form className="mt-6 grid md:grid-cols-3 gap-4" onSubmit={(e) => e.preventDefault()}>
-            <input className="md:col-span-1 rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-emerald-300/40" placeholder="Your name" />
-            <input className="md:col-span-1 rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-emerald-300/40" placeholder="Email" type="email" />
-            <input className="md:col-span-1 rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-emerald-300/40" placeholder="Company (optional)" />
-            <textarea className="md:col-span-3 rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 h-28 outline-none focus:border-emerald-300/40" placeholder="Message" />
-            <div className="md:col-span-3">
-              <Button className="bg-emerald-500 hover:bg-emerald-400"><Mail className="mr-2 h-4 w-4"/>Send</Button>
-            </div>
-          </form>
-        </div>
-      </section> */}
-
       {/* Footer */}
       <footer className="py-10 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
           <div>© {year} Shreyas Makde: All rights reserved.</div>
           <div className="flex items-center gap-5">
-            <a target="_blank" href="mailto:shreyas.makde.dev@gmail.com" className="hover:text-emerald-300 inline-flex items-center gap-1"><Mail className="h-4 w-4"/>shreyas.makde.dev@gmail.com</a>
-            <a target="_blank" href="https://github.com/smakde" className="hover:text-emerald-300 inline-flex items-center gap-1"><Github className="h-4 w-4"/>GitHub</a>
-            <a target="_blank" href="https://www.linkedin.com/in/shrey1" className="hover:text-emerald-300 inline-flex items-center gap-1"><SiLinkedin className="h-4 w-4"/>LinkedIn</a>
+            <a href="mailto:shreyas.makde.dev@gmail.com" className="hover:text-emerald-300 inline-flex items-center gap-1">
+              <Mail className="h-4 w-4" />shreyas.makde.dev@gmail.com
+            </a>
+            <a href="https://github.com/smakde" target="_blank" rel="noreferrer" className="hover:text-emerald-300 inline-flex items-center gap-1">
+              <Github className="h-4 w-4" />GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/shrey1" target="_blank" rel="noreferrer" className="hover:text-emerald-300 inline-flex items-center gap-1">
+              <SiLinkedin className="h-4 w-4" />LinkedIn
+            </a>
           </div>
         </div>
       </footer>
@@ -298,11 +309,9 @@ reliability. Experienced in cross-functional collaboration, delivering quality s
   );
 }
 
-// ——— Helpers ———
+/* ——— Helpers ——— */
 function Avatar({ src, alt, className, initials = "SM" }: { src?: string; alt?: string; className?: string; initials?: string }) {
   const [errored, setErrored] = useState(false);
-
-  // If image missing or fails to load, show initials fallback
   if (!src || errored) {
     return (
       <div role="img" aria-label={alt} className={`inline-flex items-center justify-center bg-emerald-500/10 text-emerald-300 ${className}`}>
@@ -310,7 +319,6 @@ function Avatar({ src, alt, className, initials = "SM" }: { src?: string; alt?: 
       </div>
     );
   }
-
   return <img src={src} alt={alt} className={className} onError={() => setErrored(true)} />;
 }
 
@@ -330,20 +338,22 @@ function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; va
   );
 }
 
-// function SkillCard({ title, items }: { title: string; items: string[] }) {
-//   return (
-//     <Card className="bg-white/5 border-white/10">
-//       <CardHeader>
-//         <CardTitle>{title}</CardTitle>
-//         <CardDescription className="text-slate-300/80">What I use in production</CardDescription>
-//       </CardHeader>
-//       <CardContent>
-//         <ul className="space-y-2 list-disc list-inside text-slate-200">
-//           {items.map((i) => (
-//             <li key={i}>{i}</li>
-//           ))}
-//         </ul>
-//       </CardContent>
-//     </Card>
-//   );
-// }
+function SkillCard({ title, desc, items }: { title: string; desc?: string; items: string[] }) {
+  return (
+    <Card className="bg-white/5 border-white/10">
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription className="text-slate-300/80">{desc}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ul className="list-disc list-inside text-slate-50 text-sm md:text-[13px] space-y-1">
+          {items.map((i) => (
+            <li key={i} className="leading-snug">
+              {i}
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
