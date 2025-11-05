@@ -33,8 +33,8 @@ export default function Portfolio() {
       blurb:
         "Compact transformer to auto-label help-desk tickets (sentiment + topic), with FastAPI endpoint and eval dashboard.",
       tags: ["Transformers", "Text Classification", "FastAPI", "MLOps"],
-      status: "Coming soon",
-      link: "#",
+      status: "Explore on GitHub",
+      link: "https://github.com/smakde/NLP-Ticket-Triage",
       img: "/images/NLP.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
@@ -43,18 +43,18 @@ export default function Portfolio() {
       blurb:
         "Hybrid implicit-feedback + content (ALS/LightFM) with a tiny Streamlit app to browse top-N recs and explanations.",
       tags: ["Recommenders", "Vectorization", "Eval@K", "Streamlit"],
-      status: "Coming soon",
-      link: "#",
+      status: "Explore on GitHub",
+      link: "https://github.com/smakde/Learning-Resource-Recommender",
       img: "/images/Learning.png?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "p4",
-      title: "Edge Vision: On-device CV Pipeline",
+      title: "Edge Vision Mathifyer",
       blurb:
         "SymPy + NumPy engine that solves probability/combinatorics/calculus snippets, shows steps, and verifies via Monte Carlo.",
       tags: ["SymPy", "NumPy", "Simulation", "CLI/Web UI"],
-      status: "Coming soon",
-      link: "#",
+      status: "Explore on GitHub",
+      link: "https://github.com/smakde/Edge-Vision-Mathifyer",
       img: "/images/Math.png?q=80&w=1200&auto=format&fit=crop",
     },
   ];
