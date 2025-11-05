@@ -181,9 +181,6 @@ export default function Portfolio() {
                   <Stat icon={<Backpack className="h-4 w-8" />} label="Backend" value="Python, C# .NET, Node.js, REST, SQL Server, Postgres, Microservices" />
                   <Stat icon={<BsFront className="h-4 w-8" />} label="Frontend" value="React, Angular, Vue, Vite, TypeScript, TailwindCSS" />
                 </div>
-                <div className="mt-5 text-xs text-slate-400">
-                  Built with performance and reliability in mind; latency budgets, cost control, and observability baked in.
-                </div>
               </div>
             </div>
           </motion.div>
